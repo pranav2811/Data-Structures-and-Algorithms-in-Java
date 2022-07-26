@@ -1,4 +1,4 @@
-package SORTING;
+
 
 public class S1_BubbleSort{
     public static void main(String[] args){

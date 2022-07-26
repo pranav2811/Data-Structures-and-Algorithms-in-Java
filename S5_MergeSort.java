@@ -1,4 +1,4 @@
-package SORTING;
+
 
 public class S5_MergeSort{
     public static void main(String[] args){

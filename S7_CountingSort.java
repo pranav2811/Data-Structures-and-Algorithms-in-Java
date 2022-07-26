@@ -1,4 +1,4 @@
-package SORTING;
+
 
 public class S7_CountingSort {
     public static void main(String[] args){
