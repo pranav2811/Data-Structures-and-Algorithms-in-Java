@@ -1,5 +1,8 @@
 //capacity is the maximum no of items that the list can hold before it has to be resized
 //size is the no of items that are actually in the list
+
+//it is backed by an array so if you have the index then it will be performed in constant time, but if you dont then it will be O(N)
+//Since it is backed by an array, it is a dynamic array, so it can grow and shrink as needed and has the same pros and cons as an array
 import java.util.*;
 class Employee{
     private String firstName;
