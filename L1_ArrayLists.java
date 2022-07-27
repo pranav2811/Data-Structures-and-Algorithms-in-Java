@@ -80,7 +80,7 @@ class Employee{
     
 }
 
-public class arrayLists {
+public class L1_ArrayLists {
     public static void main(String[] args){
         List<Employee> employeeList = new ArrayList<Employee>();
         employeeList.add(new Employee("Jane", "Jones", 123));
