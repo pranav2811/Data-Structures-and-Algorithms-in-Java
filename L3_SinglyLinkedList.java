@@ -1,4 +1,3 @@
-import java.util.List;
 
 //arrays are not involved
 //each item is aware of other items, i.e they know which item comes after them

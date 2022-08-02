@@ -1,7 +1,11 @@
 //each node in the list points to the next and the previous item in the list
 //we can remove and insert elements in constant time
 //we can remove and insert elements at both the front and back
+
+
+
 class Employee {
+
     private String firstName;
     private String lastName;
     private int id;
@@ -37,42 +41,32 @@ class Employee {
     }
 
     @Override
-    public String toString() {
-        return "Employee [firstName=" + firstName + ", id=" + id + ", lastName=" + lastName + "]";
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Employee employee = (Employee) o;
+
+        if (id != employee.id) return false;
+        if (!firstName.equals(employee.firstName)) return false;
+        return lastName.equals(employee.lastName);
     }
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-        result = prime * result + id;
-        result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+        int result = firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        result = 31 * result + id;
         return result;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Employee other = (Employee) obj;
-        if (firstName == null) {
-            if (other.firstName != null)
-                return false;
-        } else if (!firstName.equals(other.firstName))
-            return false;
-        if (id != other.id)
-            return false;
-        if (lastName == null) {
-            if (other.lastName != null)
-                return false;
-        } else if (!lastName.equals(other.lastName))
-            return false;
-        return true;
+    public String toString() {
+        return "Employee{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", id=" + id +
+                '}';
     }
 
 }
@@ -83,8 +77,7 @@ class EmployeeNode {
     private EmployeeNode next;
     private EmployeeNode previous;
 
-    public EmployeeNode(Employee employee) {// the constructor only takes employee because we dont know what the next node will be 
-                                           
+    public EmployeeNode(Employee employee) {
         this.employee = employee;
     }
 
@@ -104,10 +97,6 @@ class EmployeeNode {
         this.next = next;
     }
 
-    public String toString(){
-        return employee.toString();
-    }
-
     public EmployeeNode getPrevious() {
         return previous;
     }
@@ -116,81 +105,137 @@ class EmployeeNode {
         this.previous = previous;
     }
 
+    public String toString() {
+        return employee.toString();
+    }
+
 }
 
 class EmployeeDoublyLinkedList {
 
     private EmployeeNode head;
     private EmployeeNode tail;
-    // for the best performance we should add items to the beginning
     private int size;
 
-    public void addtoFront(Employee employee) {
-        EmployeeNode node = new EmployeeNode(employee);// first we create a new node
-        node.setNext(head);//we are inserting the node right at the front of the list
+    public void addToFront(Employee employee) {
+        EmployeeNode node = new EmployeeNode(employee);
 
-        if(head == null){//if we are adding the node to are an empty list
+        if (head == null) {
             tail = node;
         }
-        else{
-            head.setPrevious(node);//if the list is not empty we point the current head nodes previous field to the new node
+        else {
+            head.setPrevious(node);
+            node.setNext(head);
         }
-        
-        head = node;//we point the head to the node we just created
+
+        head = node;
         size++;
-        //when a new node is added to the front previous will always point to null by default so we dont need to change that
     }
 
-    public EmployeeNode removeFromFont(){
-        if(isEmpty()){
+    public void addToEnd(Employee employee) {
+        EmployeeNode node = new EmployeeNode(employee);
+        if (tail == null) {
+            head = node;
+        }
+        else {
+            tail.setNext(node);
+            node.setPrevious(tail);
+        }
+
+        tail = node;
+        size++;
+    }
+
+    public EmployeeNode removeFromFront() {
+        if (isEmpty()) {
             return null;
         }
 
         EmployeeNode removedNode = head;
-        head = head.getNext();
-        //we now want the head field to point to whatever the next field is pointing to 
+
+        if (head.getNext() == null) {
+            tail = null;
+        }
+        else {
+            head.getNext().setPrevious(null);
+        }
+
         head = head.getNext();
         size--;
         removedNode.setNext(null);
         return removedNode;
     }
-    public int getSize(){
+
+    public EmployeeNode removeFromEnd() {
+        if (isEmpty()) {
+            return null;
+        }
+
+        EmployeeNode removedNode = tail;
+
+        if (tail.getPrevious() == null) {
+            head = null;
+        }
+        else {
+            tail.getPrevious().setNext(null);
+        }
+
+        tail = tail.getPrevious();
+        size--;
+        removedNode.setPrevious(null);
+        return removedNode;
+    }
+
+    public int getSize() {
         return size;
     }
-    public boolean isEmpty(){
+
+    public boolean isEmpty() {
         return head == null;
     }
 
     public void printList() {
         EmployeeNode current = head;
-        System.out.println("Head -> ");
+        System.out.print("HEAD -> ");
         while (current != null) {
             System.out.print(current);
-            System.out.println(" <=> ");
+            System.out.print(" <=> ");
             current = current.getNext();
         }
         System.out.println("null");
     }
+
+
 }
-public class L4_DoublyLinkedList {
-    public static void main(String[] args) {
+
+
+public class L4_DoublyLinkedList{
+    public static void main(String[] args){
         Employee janeJones = new Employee("Jane", "Jones", 123);
         Employee johnDoe = new Employee("John", "Doe", 4567);
         Employee marySmith = new Employee("Mary", "Smith", 22);
         Employee mikeWilson = new Employee("Mike", "Wilson", 3245);
 
         EmployeeDoublyLinkedList list = new EmployeeDoublyLinkedList();
-        
-        list.addtoFront(janeJones);
-        list.addtoFront(johnDoe);
-        list.addtoFront(marySmith);
-        list.addtoFront(mikeWilson);
+
+        list.addToFront(janeJones);
+        list.addToFront(johnDoe);
+        list.addToFront(marySmith);
+        list.addToFront(mikeWilson);
 
         list.printList();
-
         System.out.println(list.getSize());
 
-        
-        
+        Employee billEnd = new Employee("Bill", "End", 78);
+        list.addToEnd(billEnd);
+        list.printList();
+        System.out.println(list.getSize());
+        list.removeFromFront();
+        list.printList();
+        System.out.println(list.getSize());
+        list.removeFromEnd();
+        list.printList();
+        System.out.println(list.getSize());
+    
     }
 }
