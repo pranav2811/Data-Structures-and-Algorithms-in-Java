@@ -170,7 +170,7 @@ class ArrayQueue {
 // IN ORDER TO USE THE EMPTY SPACE AT THE FRONT OF THE ARRAY IF WE WRAP THE BACK
 // OF THE QUEUE TO THE FRONT OF THE ARRAY
 
-public class L6_1_CircularQueue {
+public class L6_CircularQueue {
     public static void main(String[] args) {
         Employee janeJones = new Employee("Jane", "Jones", 123);
         Employee johnDoe = new Employee("John", "Doe", 4567);

@@ -25,7 +25,7 @@ public class BinarySearch {
 
         while(start < end){
             int midpoint = (start + end) / 2;
-            System.out.println("midpoint = " + midpoint);
+    
             if(input[midpoint] == value){
                 return midpoint;
             }
