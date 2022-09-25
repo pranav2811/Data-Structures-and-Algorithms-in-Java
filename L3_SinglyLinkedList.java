@@ -3,8 +3,8 @@
 //each item is aware of other items, i.e they know which item comes after them
 //so each items stores an integer value as well as the reference to the next integer in the list
 
-//each item in the list is called a node
-//the first item in the list is the head of the list
+//each item in the list is called a node and each item is aware of the next item in the list as each item contains a link to the next item
+//the first item in the list is the head of the list and the head will ahve a reference to the next item in the list
 //the last item always points to null
 //if you have a refernce to the head then you can traverse the entire list
 //we always insert elements at the front of the list as we only store the reference to the first element and this is done in constant time complexity
@@ -130,7 +130,7 @@ class EmployeeLinkedList {
         EmployeeNode node = new EmployeeNode(employee);// first we create a new node
         node.setNext(head);//we are inserting the node right at the front of the list
         head = node;//we point the head to the node we just created
-        size++;
+        size++;//this will always be O(1) as we are doing the same number of steps as we are always adding in the front
     }
 
     public EmployeeNode removeFromFont(){
@@ -138,7 +138,7 @@ class EmployeeLinkedList {
             return null;
         }
 
-        EmployeeNode removedNode = head;
+        EmployeeNode removedNode = head;//removing will also be O(1) as we are always removing from the front and performing the same number of steps
         head = head.getNext();
         //we now want the head field to point to whatever the next field is pointing to 
         head = head.getNext();
