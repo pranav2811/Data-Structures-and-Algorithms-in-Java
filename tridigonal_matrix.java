@@ -22,5 +22,6 @@ public class tridigonal_matrix {
             System.out.println();
 
         }
+        sc.close();
     }
 }
