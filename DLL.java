@@ -175,6 +175,18 @@ public class DLL {
         // Finally, free the memory occupied by del
         return;
     }
+	public void deleteBeginning() {
+		head = head.next;
+		head.prev = null;
+	}
+
+	public void deleteEnd() {
+		Node last = head;
+		while (last.next != null) {
+			last = last.next;
+		}
+		last.prev.next = null;
+	}
 
 	// Driver code
 	public static void main(String[] args)
@@ -206,6 +218,11 @@ public class DLL {
 		// dll.InsertBefore(dll.head.next.next, 5);
 
 		System.out.println("Created DLL is: ");
+		dll.printlist(dll.head);
+
+		dll.deleteBeginning();
+		dll.printlist(dll.head);
+		dll.deleteEnd();
 		dll.printlist(dll.head);
 	}
 }
