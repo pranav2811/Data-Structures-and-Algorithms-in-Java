@@ -83,42 +83,52 @@ class Employee {
 
 }
 
- class SimpleHashtable {
+class SimpleHashtable{
 
-    private Employee[] hashtable;
+    private Employee[] hashTable;
 
-    public SimpleHashtable() {
-        hashtable = new Employee[10];
+    public SimpleHashtable(){
+        hashTable = new Employee[10];
+
     }
 
-    public void put(String key, Employee employee) {
+    //function to add values to the hashTable
+
+    public void put(String key, Employee employee){
+        //hashing the key
+
+        int hashedKey = hashKey(key);//this will give us the index in the array
+        if (hashTable [hashedKey] != null){
+            System.out.println("Sorry! theres already an employee at position " + hashedKey);
+        }
+        else{
+            hashTable[hashedKey] = employee;
+        }
+
+    }
+
+    //method for retrieving values from the hashtable
+
+    public Employee get(String key){
         int hashedKey = hashKey(key);
-        if (hashtable[hashedKey] != null) {
-            System.out.println("Sorry, there's already an employee at position " + hashedKey);
-        }
-        else {
-            hashtable[hashedKey] = employee;
-        }
+        return hashTable[hashedKey];//retrieval is constant time as it is array access
     }
 
-    public Employee get(String key) {
-        int hashedKey = hashKey(key);
-        return hashtable[hashedKey];
+    //hashing function
+    private int hashKey(String key){
+        return key.length() % hashTable.length;//to get indices in the range 0 to 9
+        //key and the hashed value are not the same thing.... the key is hashed to a hashed value
+        
     }
 
-    private int hashKey(String key) {
-        return key.length() % hashtable.length;
-    }
-
-    public void printHashtable() {
-        for (int i = 0; i < hashtable.length; i++) {
-            System.out.println(hashtable[i]);
+    public void printHashtable(){
+        for (int i = 0; i < hashTable.length; i++){
+            System.out.println(hashTable[i]);
         }
     }
-
 }
-
-public class L7_Hashtables {
+ 
+public class L7_1_Hashtables {
 
     public static void main(String[] args) {
         Employee janeJones = new Employee("Jane", "Jones", 123);
@@ -132,6 +142,7 @@ public class L7_Hashtables {
         ht.put("Doe", johnDoe);
         ht.put("Wilson", mikeWilson);
         ht.put("Smith", marySmith);
+        ht.put("End", billEnd);
 
         ht.printHashtable();
 

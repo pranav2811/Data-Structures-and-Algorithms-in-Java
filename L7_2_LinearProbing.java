@@ -197,7 +197,7 @@ class SimpleHashtable {
 
 }
 
-public class LinearProbing {
+public class L7_2_LinearProbing {
     public static void main(String[] args) {
         Employee janeJones = new Employee("Jane", "Jones", 123);
         Employee johnDoe = new Employee("John", "Doe", 4567);
