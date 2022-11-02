@@ -210,6 +210,7 @@ public class L7_2_LinearProbing {
         ht.put("Doe", johnDoe);
         ht.put("Wilson", mikeWilson);
         ht.put("Smith", marySmith);
+        ht.put("End", billEnd);
 
         ht.printHashtable();
 

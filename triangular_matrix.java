@@ -36,7 +36,12 @@ public class triangular_matrix {
             }
             System.out.println();
 
+            
+
         }
+        
+        
     }
+    
     
 }
