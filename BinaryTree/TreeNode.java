@@ -6,7 +6,13 @@ public class TreeNode{
     private TreeNode leftChild;
     private TreeNode rightChild;
 
+    public TreeNode(int data){
+        this.data = data;
+    }
+
     public void insert(int value){
+
+        
         //well check whether the value equals the data in the node
 
         if(value == data){
@@ -40,10 +46,30 @@ public class TreeNode{
         }
 
     }
-    
-    public TreeNode(int data){
-        this.data = data;
+
+    public TreeNode get(int value){
+        //we are going to check the value against the value of the node if euqal we found the node if not equal we are going to search the left or right subtree
+        //depending whether the node is more or less than the value we are searching for
+        if(value == data){
+            return this;
+        }
+
+        if(value < data){
+            if(leftChild != null){
+                return leftChild.get(value);
+            }
+        }
+
+        else {
+            if(rightChild != null){
+                return rightChild.get(value);
+            }
+        }
+
+        return null;
     }
+    
+    
 
     public int getData() {
         return this.data;

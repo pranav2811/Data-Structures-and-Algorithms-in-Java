@@ -31,5 +31,8 @@ public class BinaryTrees {
         intTree.insert(32);
 
         intTree.traverseInOrder();
+        System.out.println(intTree.get(27));
+        System.out.println(intTree.get(17));
+        System.out.println(intTree.get(8888));
     }
 }
