@@ -1,6 +1,4 @@
-//o(logn) as we keep divinding the array in half
-//can be implemented recursively
-//the array we are using must be sorted
+
 
 public class BinarySearch {
     public static void main(String[] args){
