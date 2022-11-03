@@ -47,6 +47,25 @@ public class TreeNode{
 
     }
 
+    public int min() {
+        if(leftChild == null){
+            return data;//if there is no left child then the current node is the smallest
+        }
+        else {
+            return leftChild.min();//we keep travelling down the left child until we reach the smallest
+        }
+
+    }
+
+    public int max() {
+        if (rightChild == null){
+            return data;
+        }
+        else {
+            return rightChild.max();
+        }
+    }
+
     public TreeNode get(int value){
         //we are going to check the value against the value of the node if euqal we found the node if not equal we are going to search the left or right subtree
         //depending whether the node is more or less than the value we are searching for
