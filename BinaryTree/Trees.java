@@ -1,3 +1,4 @@
+package BinaryTree;
 //It is a hierarchical data structure
 //Every item in the tree is called a node
 //Each node can have only one parent
@@ -9,9 +10,3 @@
  //depth is the number of edget is a given path
  //Height of the node is the number of edges on the longest path from the node to a leaf
  //All the nodes in the path from the root to that node are called the ancestors
-public class Trees{
-    
-    public static void main(String[] args){
-
-    }
-}
