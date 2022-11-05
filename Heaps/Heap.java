@@ -29,7 +29,8 @@ public class Heap {
         return heap[0];
     }
 
-    public int delete(int index) {
+    public int delete(int index) {//first we need to find the item we need to remove, in worst case thatll be linear cuz linear search, then we need to fix heap so it is o(log(n))
+        //but with heaps we just want to remove the root and then fix the heap so it is o(log(n))
         if (isEmpty()) {
             throw new IndexOutOfBoundsException("Heap is empty");
         }
