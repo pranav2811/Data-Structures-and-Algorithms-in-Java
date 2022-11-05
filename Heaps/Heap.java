@@ -9,7 +9,7 @@ public class Heap {
         heap = new int[capacity];
     }
 
-    public void insert(int value) {
+    public void insert(int value) {//normally it is constant time complexity but we need to fix heap so it is o(log(n))
         if (isFull()) {
             throw new IndexOutOfBoundsException("Heap is full");
         }
