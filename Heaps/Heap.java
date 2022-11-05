@@ -20,6 +20,15 @@ public class Heap {
         size++;
     }
 
+    //for peek we just return heap[0] if the heap is not empty and if empty we throw an esxception
+
+    public int peek(){
+        if(isEmpty()){
+            throw new IndexOutOfBoundsException();
+        }
+        return heap[0];
+    }
+
     public int delete(int index) {
         if (isEmpty()) {
             throw new IndexOutOfBoundsException("Heap is empty");
