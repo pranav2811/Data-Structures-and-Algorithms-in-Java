@@ -4,6 +4,7 @@
 //it is backed by an array so if you have the index then it will be performed in constant time, but if you dont then it will be O(N)
 //Since it is backed by an array, it is a dynamic array, so it can grow and shrink as needed and has the same pros and cons as an array
 import java.util.*;
+
 class Employee{
     private String firstName;
     private String lastName;
