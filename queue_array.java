@@ -13,7 +13,7 @@ public class queue_array {
             return rear == -1;
         }
 
-        public static void add(int data){
+        public void add(int data){
             if(rear == size - 1){
                 System.out.println("Queue is full");
                 return;
@@ -21,7 +21,7 @@ public class queue_array {
             rear++;
             arr[rear] = data; 
         }
-        public static int remove(){
+        public int remove(){
             if(isEmpty()){
                 System.out.println("queue is empty");
                 return -1;
