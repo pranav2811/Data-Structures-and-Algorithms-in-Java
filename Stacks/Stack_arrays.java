@@ -1,13 +1,13 @@
 package Stacks;
 
-public class Stack{
+public class Stack_arrays{
 
     //using array
 
     int[] arr;
     int topOfStack;//variable at the top of the stack
 
-    public Stack(int size){
+    public Stack_arrays(int size){
         this.arr = new int[size];//constant time complexity
         this.topOfStack = -1;//since the stack is empty right now - constant time complexity
         System.out.println("This stack is created with size of : "+ size);//constant time complexity
