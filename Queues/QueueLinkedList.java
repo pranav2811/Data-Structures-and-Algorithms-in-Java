@@ -1,3 +1,6 @@
+//more efficient that using arrays since in arrays we have to allocate contagious memory which is not as efficient as using linked list
+//moreover space complecity for creating queue is O(n) and time complexity is O(1) for all operations but both space and time
+//complexity is O(1) for all operations in linked list
 package Queues;
 public class QueueLinkedList {
   LinkedList list;
