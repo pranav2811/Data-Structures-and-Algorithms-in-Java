@@ -1,3 +1,4 @@
+package Queues;
 public class QueueArray {
   int[] arr;
   int topOfQueue;

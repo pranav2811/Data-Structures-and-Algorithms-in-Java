@@ -1,3 +1,4 @@
+package Queues;
 public class QueueLinkedList {
   LinkedList list;
 

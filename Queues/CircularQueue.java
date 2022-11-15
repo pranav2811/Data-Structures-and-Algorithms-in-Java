@@ -1,4 +1,8 @@
+//circular queue is required as in the case of linear queue, even after we perform dequeue, the topOfQueue remains the same
+//and hence isFull returns true and we are not allowed to enter any more elements in the queue even though
+//the queue is not full
 
+package Queues;
 public class CircularQueue {
   int[] arr;
   int topOfQueue;
