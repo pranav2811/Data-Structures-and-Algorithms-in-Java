@@ -1,6 +1,6 @@
 package Heaps;
 
-public class Main {
+public class HeapMain {
     public static void main(String[] args) {
         Heap heap = new Heap(10);
         heap.insert(80);

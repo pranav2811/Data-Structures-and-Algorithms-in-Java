@@ -1,7 +1,7 @@
 package Graphs_AdjacenyList;
 import java.util.*;
 
-public class Main {
+public class GraphListMain {
     public static void main(String[] args) {
         
         ArrayList<GraphNode> nodeList = new ArrayList<GraphNode>();

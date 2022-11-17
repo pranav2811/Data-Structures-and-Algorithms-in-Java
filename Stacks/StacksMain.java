@@ -1,6 +1,6 @@
 package Stacks;
 
-public class Main {
+public class StacksMain {
     public static void main(String[] args) {
 
         //using arrays

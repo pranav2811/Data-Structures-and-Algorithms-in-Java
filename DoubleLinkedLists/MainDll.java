@@ -1,4 +1,4 @@
-public class Main {
+public class MainDll {
   public static void main(String[] args) {
     DoublyLinkedList dll = new DoublyLinkedList();
     dll.createDLL(1);

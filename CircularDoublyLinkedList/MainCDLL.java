@@ -1,6 +1,6 @@
 package CircularDoublyLinkedList;
 
-public class Main {
+public class MainCDLL {
   public static void main(String[] args) {
     CircularDoublyLinkedList cdll = new CircularDoublyLinkedList();
     cdll.createCDLL(1);
