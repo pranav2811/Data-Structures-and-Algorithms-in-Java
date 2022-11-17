@@ -160,14 +160,14 @@ public class BinaryTree {
     }
     //delete given node
 
-    void deleteNode(String value){
+    void deleteNode(String value){//O(n) space time complexity
         Queue <BinaryNode> queue = new LinkedList<BinaryNode>();
         queue.add(root);
-        while(!queue.isEmpty()){
+        while(!queue.isEmpty()){//we are looking through all elements so worst case is O(n)
             BinaryNode presentNode = queue.remove();
             if(presentNode.value == value){
                 presentNode.value = getDeepestNode().value;
-                deleteDeepestNode();
+                deleteDeepestNode();//O(n) space time complexity
                 System.out.println("The node has been deleted");
                 return;
             }
@@ -182,4 +182,12 @@ public class BinaryTree {
             System.out.println("The node does not exist in the binary tree");
         }
     }
+    //delete binary tree - simply delete root node
+
+    void deleteBinaryTree(){//O(1) space time complexity
+        root = null;
+        System.out.println("Binary tree has been successfully deleted");
+    }
 }
+
+    
