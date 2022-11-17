@@ -71,10 +71,10 @@ public class BinaryTree {
 
     }
 
-    //Search method
-    public int search(String value){//O(n) time complexity and O(1) space complexity
-        for(int i = 1; i < lastUsedIndex; i++){//- O(n) time complexity
-            if(arr[i] == value){
+    // Search method
+    public int search(String value) {// O(n) time complexity and O(1) space complexity
+        for (int i = 1; i < lastUsedIndex; i++) {// - O(n) time complexity
+            if (arr[i] == value) {
                 System.out.println("Found " + value + " at index " + i);
                 return i;
             }
@@ -83,17 +83,26 @@ public class BinaryTree {
         return -1;
     }
 
-    //Delete method
-    public void delete(String value){
+    // Delete
+    public void delete(String value) {// o(n) time complexity and O(1) space complexity
         int location = search(value);
-        if (location == -1){
-            return;//this means that the node does not exit
-        }
-        else{
+        if (location == -1) {
+            return;// this means that the node does not exit
+        } else {
             arr[location] = arr[lastUsedIndex];
             lastUsedIndex--;
             System.out.println("The node has been deleted");
         }
     }
-    
+
+    // Delete BT
+    public void deleteBT() {
+        try {
+            arr = null;
+            System.out.println("The BT has been deleted");
+        } catch (Exception e) {
+            System.out.println("The BT could not be deleted");
+        }
+
+    }
 }
