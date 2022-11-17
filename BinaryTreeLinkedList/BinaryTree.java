@@ -83,5 +83,36 @@ public class BinaryTree {
         } 
         System.out.println("The value " + value + " was not found");
     }
-    
+    //Insert Method
+    void insert(String value){//O(n) space time complexity
+        BinaryNode newNode = new BinaryNode();
+        newNode.value = value;
+        //if root node null we assign this node to root
+        if(root == null){
+            root = newNode;
+            System.out.println("Insert new node at root");
+            return;
+        }
+        //else we use level order traversal to look for an empty node
+        Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
+        queue.add(root);
+        while(!queue.isEmpty()){//we are looking through all elements so worst case is O(n)
+            BinaryNode presentNode = queue.remove();
+            if(presentNode.left == null){
+                presentNode.left = newNode;
+                System.out.println("Inserted new node at left");
+                break;
+            }
+            else if(presentNode.right == null){
+                presentNode.right = newNode;
+                System.out.println("Inserted new node at right");
+                break;
+            }
+            else{
+                queue.add(presentNode.left);
+                queue.add(presentNode.right);
+            }
+        }
+
+    }
 }
