@@ -96,7 +96,7 @@ public class BinaryTree {
     }
 
     // Delete BT
-    public void deleteBT() {
+    public void deleteBT() {// O(1) time complexity and O(1) space complexity
         try {
             arr = null;
             System.out.println("The BT has been deleted");
