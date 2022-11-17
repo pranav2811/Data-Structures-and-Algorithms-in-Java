@@ -34,7 +34,7 @@ public class Main {
         N4.right = N9;
         binaryTree.root = N1;
 
-        binaryTree.preOrder(binaryTree.root);
+        binaryTree.inOrder(binaryTree.root);
         
     } 
 }

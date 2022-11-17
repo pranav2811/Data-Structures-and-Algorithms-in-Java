@@ -17,4 +17,15 @@ public class BinaryTree {
         preOrder(node.left);//recursively visit all nodes in the left subtree O(N/2)
         preOrder(node.right);//afterwards recursively visit all nodes in the right subtree O(N/2)
     }
+    
+    //InOrder Traversal
+    public void inOrder(BinaryNode node){
+        if (node == null){
+            return;
+        }
+
+        inOrder(node.left);//visiting th eleft subtree first
+        System.out.println(node.value + " ");//visiting the root node
+        inOrder(node.right);//visiting the right subtree
+    }
 }
