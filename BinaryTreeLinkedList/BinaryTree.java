@@ -115,4 +115,71 @@ public class BinaryTree {
         }
 
     }
+    //Get deepest Node
+    public BinaryNode getDeepestNode(){
+        // we use level order traversal to get to the last node of tree
+        Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
+        BinaryNode presentNode = null;
+        queue.add(root);
+        while(!queue.isEmpty()){
+            presentNode = queue.remove();
+            if(presentNode.left != null){
+                queue.add(presentNode.left);
+            }
+            if(presentNode.right != null){
+                queue.add(presentNode.right);
+            }
+            
+            
+        }
+        return presentNode;
+        
+    }
+    //Delete Deepest Node
+    public void deleteDeepestNode(){
+        // we use level order traversal to get to the last node of tree
+        Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
+        BinaryNode previousNode, presentNode = null;
+        queue.add(root);
+        while(!queue.isEmpty()){
+            previousNode = presentNode;
+            presentNode = queue.remove();
+            if(presentNode.left == null){//this means that present nodes rigth child is the deepest node
+                previousNode.right = null;
+                return;
+            }
+            else if(presentNode.right == null){//this means that present nodes left child is the deepest node
+                presentNode.left = null;
+                return;
+            }
+            
+                queue.add(presentNode.left);
+                queue.add(presentNode.right);
+            
+        }
+    }
+    //delete given node
+
+    void deleteNode(String value){
+        Queue <BinaryNode> queue = new LinkedList<BinaryNode>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            BinaryNode presentNode = queue.remove();
+            if(presentNode.value == value){
+                presentNode.value = getDeepestNode().value;
+                deleteDeepestNode();
+                System.out.println("The node has been deleted");
+                return;
+            }
+            else{
+                if(presentNode.left != null){
+                    queue.add(presentNode.left);
+                }
+                if(presentNode.right != null){
+                    queue.add(presentNode.right);
+                }
+            }
+            System.out.println("The node does not exist in the binary tree");
+        }
+    }
 }
