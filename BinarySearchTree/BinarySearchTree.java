@@ -82,6 +82,7 @@ public class BinarySearchTree {
 
   // Search Method
   BinaryNode search(BinaryNode node, int value) {
+    //well compare it to the root nodes value and then we will go to the left or right accordingly  
     if (node == null ) {
       System.out.println("Value: "+ value+ " not found in BST");
       return null;
