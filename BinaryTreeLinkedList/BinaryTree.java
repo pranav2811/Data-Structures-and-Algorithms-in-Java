@@ -19,7 +19,7 @@ public class BinaryTree {
     }
     
     //InOrder Traversal
-    public void inOrder(BinaryNode node){
+    public void inOrder(BinaryNode node){ //O(n) space time complexity
         if (node == null){
             return;
         }
@@ -27,5 +27,16 @@ public class BinaryTree {
         inOrder(node.left);//visiting th eleft subtree first
         System.out.println(node.value + " ");//visiting the root node
         inOrder(node.right);//visiting the right subtree
+    }
+
+    //PostOrder Traversal
+    public void postOrder(BinaryNode node){//O(n) space time complexity
+        if(node == null){
+            return;
+        }
+
+        postOrder(node.left);//visiting the left subtree
+        postOrder(node.right);//visiting the right subtree
+        System.out.println(node.value + " ");//visiting the node after the left and right subtrees
     }
 }
