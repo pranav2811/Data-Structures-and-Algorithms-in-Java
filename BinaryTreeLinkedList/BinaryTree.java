@@ -1,42 +1,87 @@
 package BinaryTreeLinkedList;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
     BinaryNode root;
 
     public BinaryTree() {
-        this.root = null;//creation is of O(1) space and time complexity here
+        this.root = null;// creation is of O(1) space and time complexity here
     }
 
-    //PreOrder Traversal
-    public void preOrder(BinaryNode node){ //O(n) space time complexity
-        if(node == null){//O(1)
+    // PreOrder Traversal
+    void preOrder(BinaryNode node) { // O(n) space time complexity
+        if (node == null) {// O(1)
             return;
         }
-        
-        System.out.println(node.value + " ") ;//first we visit the root node  O(1)
-        preOrder(node.left);//recursively visit all nodes in the left subtree O(N/2)
-        preOrder(node.right);//afterwards recursively visit all nodes in the right subtree O(N/2)
+
+        System.out.println(node.value + " ");// first we visit the root node O(1)
+        preOrder(node.left);// recursively visit all nodes in the left subtree O(N/2)
+        preOrder(node.right);// afterwards recursively visit all nodes in the right subtree O(N/2)
+    }
+
+    // InOrder Traversal
+    void inOrder(BinaryNode node) { // O(n) space time complexity
+        if (node == null) {
+            return;
+        }
+
+        inOrder(node.left);// visiting th eleft subtree first
+        System.out.println(node.value + " ");// visiting the root node
+        inOrder(node.right);// visiting the right subtree
+    }
+
+    // PostOrder Traversal
+    void postOrder(BinaryNode node) {// O(n) space time complexity
+        if (node == null) {
+            return;
+        }
+
+        postOrder(node.left);// visiting the left subtree
+        postOrder(node.right);// visiting the right subtree
+        System.out.println(node.value + " ");// visiting the node after the left and right subtrees
+    }
+
+    // LevelOrder Traversal
+    // we take all nodes add them to the queue and then dequeue them one by one
+
+    void levelOrder() {//O(n) space time complexity
+        Queue<BinaryNode> queue = new LinkedList<BinaryNode>();// O(1) space and time complexity
+        // first we insert the root
+        queue.add(root);//O(1)
+
+        while (!queue.isEmpty()) {//Since we are removing all nodes from the queue, the time complexity is O(n)
+            BinaryNode presentNode = queue.remove();// O(1) space and time complexity - storing the value of the first node
+            System.out.print(presentNode.value + " ");// O(1) space and time complexity - printing the value of the first node
+            if(presentNode.left != null){//O(1)
+                queue.add(presentNode.left);//since we start from left in a level we first add the left element to the queue
+            }
+            if(presentNode.right != null){//O(1)
+                queue.add(presentNode.right);//then we add the right element to the queue
+            }
+                                                       
+        }
+    }
+    //Search Method
+    public void search(String value){//O(n) space time complexity
+        Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            BinaryNode presentNode = queue.remove();
+            if(presentNode.value == value){
+                System.out.println("The value " + value + " was found");
+                return;
+            }else{
+                if(presentNode.left != null){
+                    queue.add(presentNode.left);
+                }
+                if(presentNode.right != null){
+                    queue.add(presentNode.right);
+                }
+            }
+        } 
+        System.out.println("The value " + value + " was not found");
     }
     
-    //InOrder Traversal
-    public void inOrder(BinaryNode node){ //O(n) space time complexity
-        if (node == null){
-            return;
-        }
-
-        inOrder(node.left);//visiting th eleft subtree first
-        System.out.println(node.value + " ");//visiting the root node
-        inOrder(node.right);//visiting the right subtree
-    }
-
-    //PostOrder Traversal
-    public void postOrder(BinaryNode node){//O(n) space time complexity
-        if(node == null){
-            return;
-        }
-
-        postOrder(node.left);//visiting the left subtree
-        postOrder(node.right);//visiting the right subtree
-        System.out.println(node.value + " ");//visiting the node after the left and right subtrees
-    }
 }

@@ -37,6 +37,8 @@ public class Main {
         binaryTree.preOrder(binaryTree.root);
         binaryTree.inOrder(binaryTree.root);
         binaryTree.postOrder(binaryTree.root);
+        binaryTree.levelOrder();
+        binaryTree.search("N5");
         
     } 
 }

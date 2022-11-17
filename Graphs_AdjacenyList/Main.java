@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+        
         ArrayList<GraphNode> nodeList = new ArrayList<GraphNode>();
         nodeList.add(new GraphNode("A", 0));
         nodeList.add(new GraphNode("B", 1));
