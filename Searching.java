@@ -37,6 +37,7 @@ public class Searching {
                 return -1;
             }
         }
+        return middle;
 
     }
 
