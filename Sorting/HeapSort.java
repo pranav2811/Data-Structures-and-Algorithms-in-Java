@@ -1,3 +1,4 @@
+package Sorting;
 
 /*
  * Can only be used for sorting heaps
@@ -142,7 +143,7 @@ class Heap {
 
 }
 
-public class S9_HeapSort {
+public class HeapSort {
     public static void main(String[] args) {
 
         Heap heap = new Heap(10);

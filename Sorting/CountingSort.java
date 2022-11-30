@@ -1,6 +1,7 @@
+package Sorting;
 
 
-public class S7_CountingSort {
+public class CountingSort {
     public static void main(String[] args){
         int[] intArray = { 2, 5, 9, 8, 2, 8, 7, 10, 4, 3};
 

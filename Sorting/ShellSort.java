@@ -1,6 +1,7 @@
+package Sorting;
 
 
-public class S4_ShellSort {
+public class ShellSort {
     
     public static void main(String[] args){
 
