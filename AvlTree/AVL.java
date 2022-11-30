@@ -58,4 +58,20 @@ public class AVL {
         }
     }
 
+    //Search Method
+    BinaryNode search(BinaryNode node, int value) {
+        if (node == null) {
+            System.out.println("Value" + value + "not found in avl tree");
+            return null;
+        }
+        else if (node.value == value) {
+            System.out.println("Value" + value + "found in avl tree");
+            return node;
+        }
+        else if (value < node.value) {
+            return search(node.left, value);
+        }
+        return search(node.right, value);
+    }
+
 }
