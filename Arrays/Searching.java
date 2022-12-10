@@ -1,3 +1,4 @@
+package Arrays;
 public class Searching {
 
     // Linear Search
