@@ -1,5 +1,7 @@
+package Arrays;
+
 import java.util.Scanner;
-public class tridigonal_matrix {
+public class tridigonalMatrix {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int n = 4;
@@ -22,6 +24,8 @@ public class tridigonal_matrix {
             System.out.println();
 
         }
+
+        sc.close();
        
     }
     
