@@ -10,6 +10,8 @@ public class Main {
         directChaining.insertHashTable("over");
         directChaining.insertHashTable("lazy");
         directChaining.insertHashTable("dog");
-        directChaining.displayHashTable();
+        directChaining.searchHashTable("fox");
     }
+
+    
 }
