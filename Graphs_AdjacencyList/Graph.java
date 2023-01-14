@@ -1,4 +1,4 @@
-package Graphs_AdjacenyList;
+package Graphs_AdjacencyList;
 
 import java.util.*;
 
