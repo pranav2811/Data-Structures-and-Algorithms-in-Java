@@ -39,10 +39,10 @@ public class Graph {
         //well create a queue add the first node to the queue and then while queue is not empty we dequeue it, mark visited and add all adjacent nodes to the queue
         LinkedList<GraphNode> queue = new LinkedList<GraphNode>();
         queue.add(node);
-        if(!queue.isEmpty()){
+        while(!queue.isEmpty()){
             GraphNode currentNode = queue.remove(0);
             currentNode.isVisited = true;
-            System.out.println(currentNode.name + " ");
+            System.out.print(currentNode.name + " ");
             for(GraphNode neighbor : currentNode.neighbors){
                 if(!neighbor.isVisited){
                     queue.add(neighbor);
