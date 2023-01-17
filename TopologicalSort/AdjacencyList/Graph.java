@@ -56,7 +56,7 @@ public class Graph {
         stack.push(node);
 
     }
-
+  
     // the main topological sort method
     void topologicalSort() {
         Stack<GraphNode> stack = new Stack<>();
