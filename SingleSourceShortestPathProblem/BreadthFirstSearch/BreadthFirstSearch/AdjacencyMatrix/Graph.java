@@ -78,4 +78,33 @@ public class Graph {
             }
         }
     }
+
+    public void pathPrint(GraphNode node){
+        if(node.parent != null){
+            pathPrint(node.parent);
+        }
+        System.out.println(node.name + " ");
+    }
+
+    public void BFSForSSSP(GraphNode node){
+        LinkedList<GraphNode> queue = new LinkedList<GraphNode>();
+        queue.add(node);
+        while(!queue.isEmpty()){
+            GraphNode currentNode = queue.remove(0);
+            currentNode.isVisited = true;
+            System.out.println("Printing path for node " + currentNode.name + ": ");
+            pathPrint(currentNode);
+            System.out.println();
+            //get the neighbours
+            ArrayList<GraphNode> neighbors = getNeighbors(currentNode);
+            for(GraphNode neighbor : neighbors){
+                if(!neighbor.isVisited){
+                    queue.add(neighbor);
+                    neighbor.isVisited = true;
+                    neighbor.parent = currentNode;
+                }
+            }
+
+        }
+    }
 }
