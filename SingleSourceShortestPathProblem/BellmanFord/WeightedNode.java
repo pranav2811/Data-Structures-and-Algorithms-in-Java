@@ -1,5 +1,4 @@
-package SingleSourceShortestPathProblem.DijkstrasAlgorithm;
-
+package SingleSourceShortestPathProblem.BellmanFord;
 import java.util.*;
 
 public class WeightedNode  implements Comparable<WeightedNode> {

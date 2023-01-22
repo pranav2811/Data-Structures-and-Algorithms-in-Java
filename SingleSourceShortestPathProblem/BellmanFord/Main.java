@@ -1,4 +1,4 @@
-package SingleSourceShortestPathProblem.DijkstrasAlgorithm;
+package SingleSourceShortestPathProblem.BellmanFord;
 
 import java.util.*;
 
@@ -22,6 +22,7 @@ public class Main {
         graph.addWeightedEdge(2, 4,4);
         graph.addWeightedEdge(4, 6,9);
         graph.addWeightedEdge(5, 6,7);
-        graph.dijksta(nodeList.get(0));
+        System.out.println("Printing Bellman Ford from source: A");
+        graph.bellmanFord(nodeList.get(0));
     }
 }

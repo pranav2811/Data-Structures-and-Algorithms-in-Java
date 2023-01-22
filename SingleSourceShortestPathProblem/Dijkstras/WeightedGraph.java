@@ -1,4 +1,4 @@
-package SingleSourceShortestPathProblem.DijkstrasAlgorithm;
+package SingleSourceShortestPathProblem.Dijkstras;
 
 import java.util.*;
 
