@@ -17,5 +17,7 @@ public class Main{
             output.printAllNodesofThisSet();
 
             DisjointSet.union(fistNode, secondNode);
+            output = DisjointSet.findSet(secondNode);
+            output.printAllNodesofThisSet();
     }
 }
