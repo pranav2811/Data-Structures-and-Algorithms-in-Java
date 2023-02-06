@@ -1,4 +1,4 @@
-public class gcd{
+public class GCDProblem{
     static int gcd(int a, int b){
         //well be using euclidean algo 
         //base condition gcd(a,0) = a

@@ -42,7 +42,7 @@ public class triangularMatrix {
 
         }
 
-        sc.close();
+        
         
         
     }

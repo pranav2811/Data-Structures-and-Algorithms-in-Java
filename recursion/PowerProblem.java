@@ -1,6 +1,6 @@
 
 //calculate the power of a number using recursion
-public interface power {
+public interface PowerProblem {
 
     static int power(int base, int exp){
         if  (exp < 0){

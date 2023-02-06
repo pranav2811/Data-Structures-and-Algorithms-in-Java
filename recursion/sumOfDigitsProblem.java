@@ -1,6 +1,6 @@
 
 //Write a program to find the sum of digits of a positive integer number using recursion
-public class sumOfDigits {
+public class sumOfDigitsProblem{
 
     static int sumOfDigits(int n){
         if(n == 0 || n < 0){

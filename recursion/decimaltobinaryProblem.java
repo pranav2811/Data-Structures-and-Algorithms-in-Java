@@ -1,5 +1,5 @@
 
-public class decimaltobinary{
+public class decimaltobinaryProblem{
 
         public static int decimaltobinary(int n){
             if(n == 0){

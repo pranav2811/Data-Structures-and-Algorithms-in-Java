@@ -1,5 +1,5 @@
 
-public class factorial {
+public class FactorialProblem {
 
     static int factorial(int n) {
         
