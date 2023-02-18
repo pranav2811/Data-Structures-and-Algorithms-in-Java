@@ -1,6 +1,6 @@
 package BinaryTreeArray;
 
-public class MainBT_Array {
+public class Main {
     public static void main(String[] args){
         BinaryTree newBinaryTree = new BinaryTree(9);
         newBinaryTree.insert("N1");

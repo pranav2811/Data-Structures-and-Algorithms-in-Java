@@ -1,6 +1,6 @@
 package CirculaSinglyLinkedList;
 
-public class MainCSll {
+public class Main {
   public static void main(String[] args) {
     CircularSinglyLinkedList csll = new CircularSinglyLinkedList();
     csll.createCSLL(5);

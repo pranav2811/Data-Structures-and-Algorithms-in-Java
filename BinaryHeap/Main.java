@@ -1,6 +1,6 @@
 package BinaryHeap;
 
-public class HeapMain {
+public class Main {
     public static void main(String[] args) {
         BinaryHeap newBP = new BinaryHeap(5);
         newBP.insert(10, "Max");

@@ -1,9 +1,7 @@
-//time complexity of bfs is o(V + E) where V is the number of vertices and E is the number of edges
-//Space complexity is O(V + E) where V is the number of vertices and E is the number of edges
-package GraphTraversal.BreadthFirstSearch.AdjacencList;
+package Graphs_AdjacencyList;
 import java.util.*;
 
-public class GraphListMain {
+public class Main {
     public static void main(String[] args) {
         
         ArrayList<GraphNode> nodeList = new ArrayList<GraphNode>();
@@ -22,8 +20,6 @@ public class GraphListMain {
         g.addUndirectedEdge(3, 4);
 
         System.out.println(g.toString());
-
-        g.bfs();
 
     }
 

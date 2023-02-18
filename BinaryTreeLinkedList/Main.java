@@ -1,6 +1,6 @@
 package BinaryTreeLinkedList;
 
-public class MainBT_LL {
+public class Main {
     // creation of bianry tree involves creating an instance of the BinaryTreeLL
     // class
     public static void main(String[] args) {

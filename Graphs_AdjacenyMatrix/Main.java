@@ -22,7 +22,7 @@
 package Graphs_AdjacenyMatrix;
 import java.util.ArrayList;
 
-public class GraphMatrixMain {
+public class Main {
     public static void main(String[] args) {
         ArrayList<GraphNode> nodeList = new ArrayList<>();
         nodeList.add(new GraphNode("A", 0));

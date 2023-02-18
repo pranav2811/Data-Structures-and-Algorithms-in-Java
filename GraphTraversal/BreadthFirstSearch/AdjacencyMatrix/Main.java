@@ -1,11 +1,11 @@
-package GraphTraversal.DepthFirstSearch.AdjacencyList;
+//time complexity of bfs is o(V + E) where V is the number of vertices and E is the number of edges
+//Space complexity is O(V + E) where V is the number of vertices and E is the number of edges
+package GraphTraversal.BreadthFirstSearch.AdjacencyMatrix;
+import java.util.ArrayList;
 
-import java.util.*;
-
-public class GraphListMain {
+public class Main {
     public static void main(String[] args) {
-        
-        ArrayList<GraphNode> nodeList = new ArrayList<GraphNode>();
+        ArrayList<GraphNode> nodeList = new ArrayList<>();
         nodeList.add(new GraphNode("A", 0));
         nodeList.add(new GraphNode("B", 1));
         nodeList.add(new GraphNode("C", 2));
@@ -21,10 +21,7 @@ public class GraphListMain {
         g.addUndirectedEdge(3, 4);
 
         System.out.println(g.toString());
-        g.dfs();
-
+        g.bfs();
     }
-
-}
     
-
+}

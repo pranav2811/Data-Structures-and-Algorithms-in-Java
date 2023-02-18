@@ -1,10 +1,9 @@
-package Graphs_AdjacencyList;
-import java.util.*;
+package GraphTraversal.DepthFirstSearch.AdjacencyMatrix;
+import java.util.ArrayList;
 
-public class GraphListMain {
+public class Main {
     public static void main(String[] args) {
-        
-        ArrayList<GraphNode> nodeList = new ArrayList<GraphNode>();
+        ArrayList<GraphNode> nodeList = new ArrayList<>();
         nodeList.add(new GraphNode("A", 0));
         nodeList.add(new GraphNode("B", 1));
         nodeList.add(new GraphNode("C", 2));
@@ -20,9 +19,7 @@ public class GraphListMain {
         g.addUndirectedEdge(3, 4);
 
         System.out.println(g.toString());
-
+        g.dfs();
     }
-
-}
     
-
+}

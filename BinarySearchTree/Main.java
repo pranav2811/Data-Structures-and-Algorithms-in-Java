@@ -1,5 +1,5 @@
 package BinarySearchTree;
-public class MainBST {
+public class Main {
     public static void main(String[] args){
         BinarySearchTree newBST = new BinarySearchTree();
         newBST.insert(70);
