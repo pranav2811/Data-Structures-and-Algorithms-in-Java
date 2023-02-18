@@ -1,5 +1,6 @@
-package FractionalKnapsack;
-
+package GreedyAlgorithms.FractionalKnapsack;
+//time complexity is O(nlogn)
+// space complexity is O(1)
 import java.util.*;
 
 public class FractionalKnapsack {

@@ -1,4 +1,4 @@
-package FractionalKnapsack;
+package GreedyAlgorithms.FractionalKnapsack;
 
 public class KnapsackItem {
     private int index;

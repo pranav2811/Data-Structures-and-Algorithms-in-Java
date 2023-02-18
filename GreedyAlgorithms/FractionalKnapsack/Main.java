@@ -1,4 +1,4 @@
-package FractionalKnapsack;
+package GreedyAlgorithms.FractionalKnapsack;
 import java.util.*;
 public class Main {
     public static void main(String[] args){
