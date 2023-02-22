@@ -4,7 +4,7 @@ import java.util.*;
 //subproblems so that we dont have to calculate them again and again like divde and conquer
 
 
-public class fibonnaci {
+public class Memoisation{
 
     public static void main(String[] args){
         HashMap<Integer, Integer> memo = new HashMap<>();
