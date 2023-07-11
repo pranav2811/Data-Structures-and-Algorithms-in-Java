@@ -50,6 +50,8 @@ public class Pattern9 {
         System.out.println();
         straight_pyramid(n);
         inverted_pyramid(n);
+
+        sc.close();
     }
     
 }
