@@ -32,7 +32,7 @@ public class MaxSubArray {
   
     // Returns sum of maximum sum subarray
     // in aa[l..h]
-    static int maxSubArraySum(int arr[], int l, int h)
+    int maxSubArraySum(int arr[], int l, int h)
     {
           //Invalid Range: low is greater than high
           if (l > h)
