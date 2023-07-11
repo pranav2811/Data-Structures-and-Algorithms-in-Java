@@ -9,7 +9,7 @@ public class Pattern7 {
     for(int i = 0; i < n; i++){
 
         //to print out the spaces before the stars
-        for(int j = n; j >i; j--){
+        for(int j = 0; j <n - i +1; j++){
             System.out.print(" ");
         }
         //to print out the stars
@@ -17,7 +17,7 @@ public class Pattern7 {
             System.out.print("*");
         }
         //to print out the spaces after the stars
-        for(int j = n; j > i; j--){
+        for(int j = 0; j > n - i + 1; j++){
             System.out.print(" ");
         }
         System.out.println();
