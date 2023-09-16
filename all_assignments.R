@@ -91,9 +91,7 @@ print(exp_value$value)
 #q3
 x<-c(0,1,2,3)
 px<-c(0.1,0.2,0.2,0.5)
-y=10*x-12
-py=px
-expec_value<-sum(y*py)
+expec_value<-sum(px*((12*x)-(2*(3-x))))
 expec_value
 
 #q4
